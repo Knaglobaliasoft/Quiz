@@ -1,0 +1,235 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif !important;
+}
+.main-img {
+  background: url(./Assets/Image/bg1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.bg-image {
+  background: url(./Assets/Image/bg2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 10px;
+}
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  width: 50%;
+  background-color: #ffffff;
+  padding: 10px;
+}
+
+.footer {
+  margin-top: 10px;
+}
+.blob {
+  background: black;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+  height: 10px;
+  width: 10px;
+  transform: scale(1);
+  animation: pulse-black 2s infinite;
+}
+
+.blob.yellow {
+  background: rgba(255, 177, 66, 1);
+  box-shadow: 0 0 0 0 rgba(255, 177, 66, 1);
+  animation: pulse-yellow 2s infinite;
+}
+
+@keyframes pulse-yellow {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 177, 66, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(255, 177, 66, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 177, 66, 0);
+  }
+}
+.header input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+.header input {
+  transition: width 0.4s ease-in-out;
+}
+.header input:focus {
+  box-shadow: none !important;
+  border-color: inherit !important;
+  border: none !important;
+  width: 100%;
+}
+label {
+  font-family: "Poppins", sans-serif !important ;
+}
+.container {
+  display: block;
+  position: relative;
+  padding-left: 75px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #fff;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #eee;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #045c5c;
+  border: 1px solid #fff;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+  left: 7px;
+  top: 4px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.about {
+  box-shadow: 0 10px 15px #d3d8eb;
+  border-top: solid #e3e9ff 6px;
+}
+.mission {
+  background: transparent linear-gradient(153deg, #d1f1ff 0%, #e6e6fe 100%) 0% 0% no-repeat padding-box;
+}
+.vision {
+  background: transparent linear-gradient(153deg, #fff4e0 0%, #f2f1f0 100%) 0% 0% no-repeat padding-box;
+}
+@media (max-width: 1024px) {
+  .overview {
+    margin: auto;
+  }
+}
+#Search:hover::-webkit-search-cancel-button {
+  display: none;
+}
+.newadd {
+  height: 0;
+}
+.join {
+  animation: pulse 0.6s infinite ease-in-out alternate;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.06);
+  }
+}
+
+.glow-button {
+  overflow: hidden;
+}
+.glow-button .glow-button-spark {
+  position: absolute;
+  height: 100%;
+  width: 22px;
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: skewX(-15deg);
+  opacity: 1;
+  filter: blur(5px);
+  left: -10%;
+  top: 1px;
+  animation: shine 1.8s ease infinite;
+}
+.glow-button:hover .glow-button-spark {
+  opacity: 1;
+  transform: translateX(350px);
+  transition: all 0.5s;
+}
+@keyframes shine {
+  from {
+    opacity: 1;
+    transform: skewX(-15deg) translateX(0);
+    transition: all 0.5s;
+  }
+  to {
+    opacity: 1;
+    transform: skewX(-15deg) translateX(350px);
+    transition: all 0.5s;
+  }
+}
